@@ -11,16 +11,22 @@
 
 ## Normal Mode
 
+#### Basic Navigation
+
 - `h` → left (going home)
 - `j` → down (jumping down)
 - `k` → up (kicking up)
 - `l` → right
 - `5k` → 5 lines up
 
+#### Navigate by word
+
 - `b` → Move backword by word (letters,numbers and underscores)
 - `B` → Move backword by WORD (till whitespace)
 - `w` → Move forward by word
 - `W` → Move forward by WORD
+
+#### Move to specific position
 
 - `$` → Move to the end of the line
 - `^` → Move to the first non-blank character of the line
@@ -35,7 +41,7 @@
 - `M` → Move to the Middle of the screen (Middle)
 - `L` → Move to the Low of the screen (Low)
 
-### Delete & Correct
+#### Delete & Correct
 
 - `x` → delete a character
 - `r` → replace a character
@@ -46,6 +52,8 @@
 - `cw` → correct the token (delete + insert)
 - `cW` → correct the word
 - `cc` → correct the line
+
+#### Copy, Paste, Undo & Redo
 
 - `u` → undo
 - `ctrl + r` → redo
