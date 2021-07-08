@@ -71,10 +71,11 @@
 - `A` → insert (append) at the end of the line
 - `o` → append (open) a new line below the current line
 - `O` → append (open) a new line above the current line
-- `Ctrl + h` - delete the character before the cursor during insert mode
-- `Ctrl + w` - delete word before the cursor during insert mode
-- `Ctrl + t` - indent (move right) line one shiftwidth during insert mode
-- `Ctrl + d` - de-indent (move left) line one shiftwidth during insert mode
+- `Ctrl + h` - delete the character before the cursor
+- `Ctrl + w` - delete word before the cursor
+- `Ctrl + u` - delete everything befor the cursor
+- `Ctrl + t` - indent (move right) line one shiftwidth
+- `Ctrl + d` - de-indent (move left) line one shiftwidth
 
 ## Commands
 
