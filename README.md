@@ -41,7 +41,12 @@
 - `M` → Move to the Middle of the screen (Middle)
 - `L` → Move to the Low of the screen (Low)
 
-#### Delete & Correct
+#### Copy, Paste, Delete & Correct
+
+- `yy` → copy line (y for yank)
+- `yw` → copy token
+- `yW` → copy word
+- `p` → paste the last thing that was deleted or copied
 
 - `x` → delete a character
 - `r` → replace a character
@@ -53,15 +58,13 @@
 - `cW` → correct the word
 - `cc` → correct the line
 
-#### Copy, Paste, Undo & Redo
+- `y%` or `d%` → copy or delete everything in matching brackets (position cursor on opening or closing bracket)
+- `ci(` or `ci{` or `ci[` → delete texts inside the matching bracket
+
+### Undo & Redo
 
 - `u` → undo
 - `ctrl + r` → redo
-
-- `yy` → copy line (y for yank)
-- `yw` → copy token
-- `yW` → copy word
-- `p` → paste the last thing that was deleted or copied
 
 ## Insert Mode
 
