@@ -59,7 +59,7 @@
 - `cc` → correct the line
 
 - `y%` or `d%` → copy or delete everything in matching brackets (position cursor on opening or closing bracket)
-- `ci(` or `ci{` or `ci[` → delete texts inside the matching bracket
+- `ci(` or `ci{` or `ci[` or `ci"` → delete texts inside the matching brackets or signs
 
 ### Undo & Redo
 
