@@ -66,6 +66,24 @@
 - `u` → undo
 - `ctrl + r` → redo
 
+### Search Commands
+
+- `/pattern` - Search for pattern
+- `n` - Jump to next match
+- `N` - Search in opposite direction
+
+### Replace Commands
+
+- `:%s/old/new` - Replace old with new throughout the file
+- `:%s/old/new/g`
+- `:6,10s/old/new/g`
+
+```
+% => run this command on all lines.
+6,10 => run this command on line 6 and 10
+g => match multiple occurences in the same line.
+```
+
 ## Insert Mode
 
 - `i` → insert before the cursor
