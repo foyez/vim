@@ -107,3 +107,4 @@ g => match multiple occurences in the same line.
 - `:q!` or `ZQ` - quit and throw away unsaved changes
 - `!node filename.ext` - run a file
 - `:wqa` - write (save) and quit on all tabs
+- `:set list` - make spaces and tabs visible
