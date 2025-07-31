@@ -23,8 +23,8 @@
 
 - `b` → Move backword by word (letters,numbers and underscores)
 - `B` → Move backword by WORD (till whitespace)
-- `w` → Move forward by word
-- `W` → Move forward by WORD
+- `w` → Move forward by word (Punctuation and whitespace act as separators)
+- `W` → Move forward by WORD (Whitespace is the only separator)
 
 #### Move to specific position
 
