@@ -2,109 +2,178 @@
 
 > [cheatsheet](https://vim.rtorr.com/)
 
-## Modes
+---
 
-- `v` - visual mode
-- `:` - command mode
-- `i` - insert mode
-- `esc` - back to normal mode
+## 🔀 Modes
 
-## Normal Mode
+* `v` → **Visual mode** (select text)
+* `i` → **Insert mode**
+* `:` → **Command mode**
+* `Esc` → back to **Normal mode**
 
-#### Basic Navigation
+---
 
-- `h` → left (going home)
-- `j` → down (jumping down)
-- `k` → up (kicking up)
-- `l` → right
-- `5k` → 5 lines up
+## 🚀 Normal Mode
 
-#### Navigate by word
+### Navigation
 
-- `b` → Move backword by word (letters,numbers and underscores)
-- `B` → Move backword by WORD (till whitespace)
-- `w` → Move forward by word (Punctuation and whitespace act as separators)
-- `W` → Move forward by WORD (Whitespace is the only separator)
+* **Characters & Lines**
 
-#### Move to specific position
+  * `h` ← left (home)
+  * `l` → right
+  * `j` ↓ down
+  * `k` ↑ up
+  * `5j` / `5k` → move 5 lines down/up
 
-- `$` → Move to the end of the line
-- `^` → Move to the first non-blank character of the line
-- `0` → Move to the start of the line
+* **Words & WORDS**
 
-- `ctrl+u` → page up
-- `ctrl+d` → page down
+  * **word** = till letters, numbers, and unserscores
+  * **WORD** = till whitespace
+  * `w` / `W` → beginning of next word / WORD
+  * `e` / `E` → end of current/next word / WORD
+  * `b` / `B` → beginning of current/previous word / WORD
 
-- `5G` → move to 5th line
+* **Lines**
 
-- `H` → Move to the Top of the screen (High)
-- `M` → Move to the Middle of the screen (Middle)
-- `L` → Move to the Low of the screen (Low)
+  * `0` → start of line
+  * `^` → first non-blank char
+  * `$` → end of line
 
-#### Copy, Paste, Delete & Correct
+* **Screens**
 
-- `yy` → copy line (y for yank)
-- `yw` → copy token
-- `yW` → copy word
-- `p` → paste the last thing that was deleted or copied
+  * `Ctrl-u` → half-page up
+  * `Ctrl-d` → half-page down
+  * `Ctrl-b` → page back
+  * `Ctrl-f` → page forward
+  * `H` / `M` / `L` → top / middle / bottom of screen
 
-- `x` → delete a character
-- `r` → replace a character
-- `D` or `d$` → delete rest of the line
-- `C` or `c$` → delete rest of the line and insert mode
-- `dd` → delete the current line
-- `5dd` → delete the next 5 line
-- `cw` → correct the token (delete + insert)
-- `cW` → correct the word
-- `cc` → correct the line
+* **Paragraphs & File**
 
-- `y%` or `d%` → copy or delete everything in matching brackets (position cursor on opening or closing bracket)
-- `ci(` or `ci{` or `ci[` or `ci"` → delete texts inside the matching brackets or signs
+  * `{` / `}` → prev/next paragraph
+  * `gg` / `G` → top / bottom of file
+  * `:{n}` / `{n}G` → go to line n
+
+---
+
+### Jump List & Navigation
+
+* `Ctrl-o` → jump **backward** (older position)
+* `Ctrl-i` → jump **forward** (newer position)
+* `''` → jump to line of last cursor position
+* ` `` ` → jump to exact last cursor position
+
+👉 **Pro tip:** Think of `Ctrl-o`/`Ctrl-i` as **Back/Forward buttons** in a browser.
+
+---
+
+### Lookups & Tags
+
+* `K` → open keyword documentation (e.g. man page or `:help`)
+* `gd` → go to local declaration
+* `gD` → go to global declaration
+* `Ctrl-]` → jump to tag under cursor
+* `Ctrl-t` → jump back from tag
+
+---
+
+### Copy / Paste / Delete / Change
+
+* `yy` / `Y` → yank line
+* `yw` / `yW` → yank word / WORD
+* `p` / `P` → paste after / before
+* `dd` / `5dd` → delete line(s)
+* `cw` / `cW` → change word / WORD
+* `cc` → change line
+
+👉 **Pro tip:** `y3w` → yank 3 words, `d5W` → delete 5 WORDs, `c2e` → change until end of second word, `v4e` → visually select up to the end of the fourth word
+
+---
+
+### Indentation
+
+* `>>` / `<<` → indent / de-indent line
+* `>` / `<` in Visual mode → indent selection
+* `=` → auto-indent selection (use `gg=G` for entire file)
+
+---
 
 ### Undo & Redo
 
-- `u` → undo
-- `ctrl + r` → redo
+* `u` → undo
+* `Ctrl-r` → redo
 
-### Search Commands
+---
 
-- `/pattern` - Search for pattern
-- `n` - Jump to next match
-- `N` - Search in opposite direction
+### Repeat
 
-### Replace Commands
+* `.` → repeat last command
+* `@:` → repeat last command-line command
 
-- `:%s/old/new` - Replace old with new throughout the file
-- `:%s/old/new/g`
-- `:6,10s/old/new/g`
+---
 
-```
-% => run this command on all lines.
-6,10 => run this command on line 6 and 10
-g => match multiple occurences in the same line.
-```
+### Marks
 
-## Insert Mode
+* `ma` → mark cursor as `a`
+* `'a` → jump to mark `a` (line)
+* `` `a `` → jump to mark `a` (exact column)
+* ` `` ` → jump back to last position
 
-- `i` → insert before the cursor
-- `I` → insert at the beginning of the line
-- `a` → insert (append) after the cursor
-- `A` → insert (append) at the end of the line
-- `o` → append (open) a new line below the current line
-- `O` → append (open) a new line above the current line
-- `Ctrl + h` - delete the character before the cursor
-- `Ctrl + w` - delete word before the cursor
-- `Ctrl + u` - delete everything befor the cursor
-- `Ctrl + t` - indent (move right) line one shiftwidth
-- `Ctrl + d` - de-indent (move left) line one shiftwidth
+---
 
-## Commands
+### Buffers & Windows
 
-- `:w` - write (save) the file, but don't exit
-- `:w !sudo tee %` - write out the current file using sudo
-- `:wq` or `:x` or `ZZ` - write (save) and quit
-- `:q` - quit (fails if there are unsaved changes)
-- `:q!` or `ZQ` - quit and throw away unsaved changes
-- `!node filename.ext` - run a file
-- `:wqa` - write (save) and quit on all tabs
-- `:set list` - make spaces and tabs visible
+* `:ls` → list buffers
+* `:b{n}` → go to buffer {n}
+* `:bd` → close buffer
+* `:new` / `:vnew` → split
+* `Ctrl-w h/j/k/l` → move between splits
+* `gt` / `gT` → next / prev tab
+
+---
+
+### Search & Replace
+
+* `/pattern` → search forward
+
+* `n` / `N` → next/prev match
+
+* `*` → search word under cursor forward
+
+* `#` → search word under cursor backward
+
+* `:%s/old/new/g` → replace all
+
+* `:6,10s/old/new/g` → replace in lines 6–10
+
+---
+
+## ✍️ Insert Mode
+
+* `i` / `I` → insert before cursor / at start of line
+* `a` / `A` → append after cursor / at end of line
+* `o` / `O` → new line below / above
+* `Ctrl-h` → delete previous char
+* `Ctrl-w` → delete previous word
+* `Ctrl-u` → delete to line start
+* `Ctrl-t` / `Ctrl-d` → indent / de-indent line
+
+---
+
+## ⚙️ Commands
+
+* `:w` → save
+* `:q` → quit
+* `:wq` / `:x` / `ZZ` → save + quit
+* `:q!` / `ZQ` → quit without saving
+* `:wqa` → save + quit all
+
+---
+
+## ⚡ Power Moves
+
+* `%` → jump to matching bracket
+* `g;` / `g,` → jump to older/newer change
+* `Ctrl-g` → show file + cursor position info
+* `:noh` → clear search highlights
+
+---
